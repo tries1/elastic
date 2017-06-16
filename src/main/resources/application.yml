@@ -1,0 +1,30 @@
+logging:
+  level:
+    com.elastic: DEBUG
+
+spring:
+  profiles:
+    active: dev
+  data:
+    elasticsearch:
+      cluster-name: elastic
+      server: localhost
+      port: 9300
+      properties:
+        http:
+          # enabled: true #enable rest api
+  #    cluster-nodes: localhost:9300
+
+server:
+  port: 8080
+
+weather:
+  current:
+    api: "http://api.openweathermap.org/data/2.5/weather?q=%s&APPID=d367e7f6263cda9a60dfea861a2d0072" #%s = cityname
+
+# Timeout
+http:
+  waiting:
+    time: 5000
+
+---
